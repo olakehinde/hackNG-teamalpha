@@ -7,7 +7,7 @@ var sequelize = new Sequelize(undefined, undefined, undefined, {
 
 var db = {};
 db.connection = sequelize;
-db.employee = sequelize.import(__dirname + '/employee/employee-model.js'); //import the model
+//db.employee = sequelize.import(__dirname + '/employee/employee-model.js'); //import the model
 
 module.exports = db;
 
