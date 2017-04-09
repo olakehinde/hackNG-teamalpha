@@ -4,7 +4,7 @@ var express 	= require('express'), //require express library
 	bodyParser 	= require('body-parser'); //require body-parser library
 	app 		= express();
 	db 			= require('./db.js');
-	employeeRouter 		= require('./employee/employee-router.js'); //import the router library
+	api 		= require('./api/api.js'); //import the router library
 
 	//import the middleware (app level middlewares)
 	app.use(bodyParser.urlencoded({extended: false})); //middleware for form data
@@ -15,7 +15,7 @@ var express 	= require('express'), //require express library
 	app.use(express.static(__dirname + "/public"));
 
 	//mount the routes...
-	app.use('/employee', employeeRouter);
+	app.use('/api/v1', api);
 
 	//error middleware...
 	app.use(function(err, req, res, next) {
